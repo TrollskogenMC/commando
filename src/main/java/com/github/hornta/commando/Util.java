@@ -1,6 +1,5 @@
 package com.github.hornta.commando;
 
-import java.io.File;
 import java.util.*;
 
 public class Util {
@@ -35,17 +34,6 @@ public class Util {
     memoizedInterfaces.put(clazz, types);
 
     return types;
-  }
-
-  public static String getFilenameWithoutExtension(File file) {
-    String filename = file.getName();
-    int lastDotIndex = filename.lastIndexOf('.');
-
-    if(lastDotIndex == -1) {
-      return filename;
-    }
-
-    return filename.substring(0, lastDotIndex);
   }
 }
 
