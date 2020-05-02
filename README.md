@@ -1,5 +1,5 @@
 ## commando [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-A Bukkit library for creating commands in a declarative way and encourages writing encapsulated command executioners.
+A Bukkit helper for creating commands in a declarative way and encourages writing encapsulated command executioners.
 
 ## Motivation
 What I like with Bukkits API for creating commands is that it makes no assumption about the developers intentions. That is good and Commando is built on top of that mindset, trying not to make assumptions about the developers way of doing things.
