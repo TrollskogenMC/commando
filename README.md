@@ -8,7 +8,6 @@ Making commands that is fool proof and with validation, error handling and tab c
 ---
 
 - [How to use](#how-to-use)
-  - [Setup](#setup)
   - [Creating our first command](#creating-our-first-command)
   - [Arguments](#arguments)
     - [Custom arguments](#custom-arguments)
@@ -30,9 +29,6 @@ Making commands that is fool proof and with validation, error handling and tab c
 - [Configuration helper](#configuration-helper)
 - [Translation helper](#translation-helper)
 ## How to use
-
-### Setup
-Commando is not yet publiced on any registry so local install is the only way to use it right now.
 
 ### Creating our first command
 Commando allows you to create a command as a chained expression.
