@@ -60,7 +60,7 @@ public final class MyPlugin extends JavaPlugin {
 }
 ```
 
-Our first created command through Carbon. Easy right?
+Our first created command through Commando. Easy right?
 
 Let's give the the command an argument. We can use the `withArgument` method on CarbonCommand for that.
 
@@ -142,7 +142,7 @@ commando
 ```
 
 ### Arguments
-Most commands will need some arguments to it. Expressing arguments in Carbon is both declaritative and easy to write.
+Most commands will need some arguments to it. Expressing arguments in Commando is both declaritative and easy to write.
 
 ```java
 CarbonArgument nameArgument = new CarbonArgument.Builder("myArg").create();
@@ -159,15 +159,15 @@ commando
   });
 ```
 
-Carbon will set the default value of all arguments to a string unless you specify other.
+Commando will set the default value of all arguments to a string unless you specify other.
 If we want an integer we can do it like so:
 
 ```java
 CarbonArgument ageArgument = new CarbonArgument.Builder("age").setType(CarbonArgumentType.INTEGER).create();
 ```
 
-Now Carbon will make sure that the command logic is never called if the argument can't be converted to an integer.
-Carbon allows us to handle the case when our argument isn't of the wanted type:
+Now Commando will make sure that the command logic is never called if the argument can't be converted to an integer.
+Commando allows us to handle the case when our argument isn't of the wanted type:
 
 ```java
 commando.handleValidation((ValidationResult result) -> {
@@ -221,7 +221,7 @@ public class IsIntegerValidator implements ValidationHandler {
 ```
 
 #### Missing arguments
-Suppose you have a command that takes 3 or more arguments. It's easy for command senders to send the wrong number of arguments. In those cases we would want to give them a helping hand. We can give Carbon a handler that will be executed whenever a missing argument occurs.
+Suppose you have a command that takes 3 or more arguments. It's easy for command senders to send the wrong number of arguments. In those cases we would want to give them a helping hand. We can give Commando a handler that will be executed whenever a missing argument occurs.
 
 ```java
 commando.setMissingArgumentHandler((CommandSender sender, CarbonCommand command) -> {
@@ -233,17 +233,17 @@ commando.setMissingArgumentHandler((CommandSender sender, CarbonCommand command)
 ..
 
 #### Tab completion
-A good plugin uses tab completion wherever possible and Carbon makes it very easy for you. In most cases you won't have to do a thing, but it depends on what argument type you use.
+A good plugin uses tab completion wherever possible and Commando makes it very easy for you. In most cases you won't have to do a thing, but it depends on what argument type you use.
 
 Suppose we are making a command to change gamemode so when we tab complete we want to show the command sender all the possible values.
-The first thing we need to do is to forward the tab completion requests to Carbon. We can do it like this.
+The first thing we need to do is to forward the tab completion requests to Commando. We can do it like this.
 ```java
 public final class MyPlugin extends JavaPlugin {
   private Commando commando;
 
   @Override
   public void onEnable() {
-    commando = new Carbon();
+    commando = new Commando();
   }
 
   @Override
@@ -253,7 +253,7 @@ public final class MyPlugin extends JavaPlugin {
 }
 ```
 
-So now that Carbon is ready to handle tab completions we can go ahead and start writing our command logic.
+So now that Commando is ready to handle tab completions we can go ahead and start writing our command logic.
 ```java
 import ICommandHandler;
 
@@ -376,7 +376,7 @@ commando
 
 ### Permissions
 #### Static permissions
-You'll obviously want to control the required permission of a command and Carbon makes this easy for you. Carbon will even warn you when a command doesn't have a permission (this can be turned of, but you should always hide a command under a permission).
+You'll obviously want to control the required permission of a command and Commando makes this easy for you. Commando will even warn you when a command doesn't have a permission (this can be turned of, but you should always hide a command under a permission).
 
 ```java
 commando
@@ -397,9 +397,9 @@ commando.setNoPermissionHandler((CommandSender sender, CarbonCommand command) ->
 commando.addCommand(...)
 ```
 #### Dynamic permissions
-Dynamic permission nodes is also fully supported by Carbon. Suppose you have a special warp and you want players to have a certain permission to use that warp. Suppose the permission node looks like this `myplugin.warps.mysecretwarp`. Players may only be using `/warp mysecretwarp` when they have that permission node. We could implement the permission logic in the command handler but then why would we when we can let Carbon do it for us.
+Dynamic permission nodes is also fully supported by Commando. Suppose you have a special warp and you want players to have a certain permission to use that warp. Suppose the permission node looks like this `myplugin.warps.mysecretwarp`. Players may only be using `/warp mysecretwarp` when they have that permission node. We could implement the permission logic in the command handler but then why would we when we can let Commando do it for us.
 
-By specifying the permission with a square bracket, Carbon will replace it with whatever that argument is. `[0]` will be replaced with the first argument. `[2]` will be replaced with the third argument and so on.
+By specifying the permission with a square bracket, Commando will replace it with whatever that argument is. `[0]` will be replaced with the first argument. `[2]` will be replaced with the third argument and so on.
 
 ```java
 commando
@@ -428,7 +428,7 @@ What's powerful about this is that a player will get tab completion for `bar` an
 **The tab completion results will only show commands that the player has permission to execute, provided you have specified a permission for the command with `.requiresPermission()`**
 
 #### Handle non existing sub commands
-Carbon gives you the possibility to act on typing non existing sub commands.
+Commando gives you the possibility to act on typing non existing sub commands.
 
 Suppose your plugin has created this command.
 ```java
@@ -438,8 +438,8 @@ commando
   .withHandler(new CommandFooBar());
 ```
 What would happen if a command sender types `/foo` or `/foo baz`? If you choose not to act on this, then nothing will happen.
-However, you can tell Carbon that you want to act on this by `.setMissingCommandHandler`.
-Carbon will call this handler with the sender and a list of command suggestions.
+However, you can tell Commando that you want to act on this by `.setMissingCommandHandler`.
+Commando will call this handler with the sender and a list of command suggestions.
 ```java
 commando.setMissingCommandHandler((CommandSender sender, List<CarbonCommand> suggestions) -> {
   String suggestions = suggestions.stream()
@@ -452,7 +452,7 @@ commando.setMissingCommandHandler((CommandSender sender, List<CarbonCommand> sug
 ### ~~Loose arguments~~
 **Support for loose arguments will come back later in a new fashion**
 
-~~Somtimes you'll create a command that can take any amount of arguments wether it is zero, two or 30 arguments. Simply omit the `.setNumberOfArguments` method from the command setup and Carbon will make sure your command handler is executed regardless on how many arguments is passed.~~
+~~Somtimes you'll create a command that can take any amount of arguments wether it is zero, two or 30 arguments. Simply omit the `.setNumberOfArguments` method from the command setup and Commando will make sure your command handler is executed regardless on how many arguments is passed.~~
 
 ~~You can compare it to Javas [*Varargs*](https://www.baeldung.com/java-varargs)~~
 
@@ -474,7 +474,7 @@ public void handle(CommandSender commandSender, String[] args) {
 
 #### ~~Fixed and loose arguments~~
 ~~What if we could modify the command above so that we can broadcast a message to players with a certain permission. The arguments to the command could be `permission` and `message`.
-Here I am telling Carbon that `CommandBroadcastPermissionCommand` needs at least one argument (the permission node; a fixed argument) and the rest of the arguments will be the actual message (a loose argument).~~
+Here I am telling Commando that `CommandBroadcastPermissionCommand` needs at least one argument (the permission node; a fixed argument) and the rest of the arguments will be the actual message (a loose argument).~~
 ```java
 commando
   .addCommand("broadcast")
@@ -499,7 +499,7 @@ public class CommandBroadcastPermissionCommand implements ICommandHandler {
 ```
 
 ## Configuration helper
-Dealing with a configuration file is really simple without any extra things. What Carbon adds to this is a consice way of declaring your config.yml programmatically. Normally you are creating a config.yml file in your resources folder, but this Carbon you don't do that. Instead you setup the config values in code. This gives you a lot of flexibility when you want to fetch those config option in code. It also deals with things like unused config values and new config values.
+Dealing with a configuration file is really simple without any extra things. What Commando adds to this is a consice way of declaring your config.yml programmatically. Normally you are creating a config.yml file in your resources folder, but this Commando you don't do that. Instead you setup the config values in code. This gives you a lot of flexibility when you want to fetch those config option in code. It also deals with things like unused config values and new config values.
 
 Below is an example of a plugin of mine called Wild. I have a bunch of configuration options with different types and default values. When `.build()` is called on the ConfigurationBuilder object, then it attempts to create a config.yml file in the plugin data folder populated with the default config values.
 If a config.yml already exists, then it will see if that config.yml contains values not found in this setup and delete them. It won't overwrite current values. It will add missing values not found in the config.yml.
