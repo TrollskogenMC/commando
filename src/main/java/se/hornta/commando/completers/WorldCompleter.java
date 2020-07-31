@@ -1,19 +1,21 @@
-package com.github.hornta.commando.completers;
+package se.hornta.commando.completers;
 
-import org.bukkit.block.Biome;
+import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 
-import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class BiomeCompleter implements IArgumentHandler {
+public class WorldCompleter implements IArgumentHandler {
   @Override
   public Set<String> getItems(CommandSender sender, String argument, String[] prevArgs) {
-    return Arrays.stream(Biome.values())
-      .map(Enum::name)
+    return Bukkit
+      .getWorlds()
+      .stream()
+      .map(World::getName)
       .filter((String name) -> name.toLowerCase(Locale.ENGLISH).startsWith(argument.toLowerCase(Locale.ENGLISH)))
       .collect(Collectors.toCollection(LinkedHashSet::new));
   }

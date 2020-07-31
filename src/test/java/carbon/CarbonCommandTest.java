@@ -1,10 +1,10 @@
 package carbon;
 
-import com.github.hornta.commando.CarbonArgument;
-import com.github.hornta.commando.Commando;
-import com.github.hornta.commando.ICarbonArgument;
-import com.github.hornta.commando.ICommandHandler;
-import com.github.hornta.commando.completers.IArgumentHandler;
+import se.hornta.commando.CarbonArgument;
+import se.hornta.commando.Commando;
+import se.hornta.commando.ICarbonArgument;
+import se.hornta.commando.ICommandHandler;
+import se.hornta.commando.completers.IArgumentHandler;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.junit.Before;

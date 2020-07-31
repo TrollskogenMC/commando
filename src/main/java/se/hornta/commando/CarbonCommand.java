@@ -1,6 +1,6 @@
-package com.github.hornta.commando;
+package se.hornta.commando;
 
-import com.github.hornta.commando.completers.IArgumentHandler;
+import se.hornta.commando.completers.IArgumentHandler;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;

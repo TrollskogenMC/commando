@@ -1,6 +1,6 @@
-package com.github.hornta.commando.completers;
+package se.hornta.commando.completers;
 
-import com.github.hornta.commando.ValidationResult;
+import se.hornta.commando.ValidationResult;
 import org.bukkit.command.CommandSender;
 
 import java.util.Collections;

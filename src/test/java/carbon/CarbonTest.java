@@ -1,6 +1,6 @@
 package carbon;
 
-import com.github.hornta.commando.*;
+import se.hornta.commando.*;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -15,6 +15,12 @@ import org.mockito.internal.verification.VerificationModeFactory;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
+import se.hornta.commando.CarbonArgument;
+import se.hornta.commando.CarbonArgumentType;
+import se.hornta.commando.CarbonCommand;
+import se.hornta.commando.Commando;
+import se.hornta.commando.ICarbonArgument;
+import se.hornta.commando.ICommandHandler;
 
 import java.util.Arrays;
 import java.util.Collection;

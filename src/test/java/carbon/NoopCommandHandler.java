@@ -1,6 +1,6 @@
 package carbon;
 
-import com.github.hornta.commando.ICommandHandler;
+import se.hornta.commando.ICommandHandler;
 import org.bukkit.command.CommandSender;
 
 public class NoopCommandHandler implements ICommandHandler {

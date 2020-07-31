@@ -194,7 +194,7 @@ WORLD
 How do we react when an argument is invalid. Often we want to tell the command sender what is wrong. We can do that by overriding the method `whenInvalid` in the argument validator class.
 
 ```java
-import com.github.hornta.ValidationHandler;
+import se.hornta.ValidationHandler;
 
 public class IsIntegerValidator implements ValidationHandler {
   @Override

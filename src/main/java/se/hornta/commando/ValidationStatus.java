@@ -1,4 +1,4 @@
-package com.github.hornta.commando;
+package se.hornta.commando;
 
 public enum ValidationStatus {
   ERR_INCORRECT_TYPE,

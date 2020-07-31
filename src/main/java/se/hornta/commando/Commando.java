@@ -1,4 +1,4 @@
-package com.github.hornta.commando;
+package se.hornta.commando;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

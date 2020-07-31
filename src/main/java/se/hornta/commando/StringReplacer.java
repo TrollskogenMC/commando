@@ -1,4 +1,4 @@
-package com.github.hornta.commando;
+package se.hornta.commando;
 
 import java.util.function.Function;
 import java.util.regex.Matcher;

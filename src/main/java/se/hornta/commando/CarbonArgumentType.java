@@ -1,6 +1,15 @@
-package com.github.hornta.commando;
+package se.hornta.commando;
 
-import com.github.hornta.commando.completers.*;
+import se.hornta.commando.completers.*;
+import se.hornta.commando.completers.ArtCompleter;
+import se.hornta.commando.completers.BiomeCompleter;
+import se.hornta.commando.completers.BooleanEffectCompleter;
+import se.hornta.commando.completers.GameModeCompleter;
+import se.hornta.commando.completers.MaterialCompleter;
+import se.hornta.commando.completers.OnlinePlayerCompleter;
+import se.hornta.commando.completers.PotionEffectCompleter;
+import se.hornta.commando.completers.WorldCompleter;
+import se.hornta.commando.completers.WorldNormalCompleter;
 
 public enum CarbonArgumentType {
   STRING(true),

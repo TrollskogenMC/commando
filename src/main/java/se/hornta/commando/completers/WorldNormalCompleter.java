@@ -1,4 +1,4 @@
-package com.github.hornta.commando.completers;
+package se.hornta.commando.completers;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;

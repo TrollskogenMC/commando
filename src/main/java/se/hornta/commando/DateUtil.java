@@ -1,4 +1,4 @@
-package com.github.hornta.commando;
+package se.hornta.commando;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;

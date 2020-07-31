@@ -1,6 +1,6 @@
 package carbon;
 
-import com.github.hornta.commando.DateUtil;
+import se.hornta.commando.DateUtil;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
